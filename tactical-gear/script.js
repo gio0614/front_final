@@ -1,13 +1,3 @@
-/* ============================================================
-   VANGUARD — script.js
-   ფუნქციონალი: burger მენიუ, fetch API, localStorage cookies,
-   header bg change on scroll, scroll to top, section reveal,
-   ფერების არჩევა, pager.
-============================================================ */
-
-/* ---------- 1. BURGER MENU ----------
-   ბურგერის ღილაკზე დაჭერისას ვცვლით 'open' კლასს მენიუზე
-   და თავად ბურგერზე (X-ად გადაქცევა). */
 const burger = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
 
@@ -16,7 +6,7 @@ burger.addEventListener('click', () => {
     navMenu.classList.toggle('open');
 });
 
-// მენიუს ლინკზე დაჭერისას მობილურზე მენიუ იხურება
+
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         burger.classList.remove('open');
@@ -25,9 +15,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
-/* ---------- 2. HEADER BG CHANGE ON SCROLL ----------
-   როცა გვერდი ჩამოსქროლილია 50px-ზე მეტად, header-ს ვამატებთ
-   'scrolled' კლასს (მუქი ფონი + blur). */
+
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
@@ -39,10 +27,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* ---------- 3. COOKIE NOTIFICATION + localStorage ----------
-   თუ localStorage-ში უკვე შენახულია 'cookiesAccepted', ბანერი
-   საერთოდ არ ჩნდება. ACCEPT-ზე დაჭერისას ვინახავთ flag-ს და
-   ვმალავთ ბანერს. */
+
 const cookieBanner = document.getElementById('cookieBanner');
 const acceptBtn = document.getElementById('acceptCookies');
 
@@ -56,13 +41,10 @@ acceptBtn.addEventListener('click', () => {
 });
 
 
-/* ---------- 4. FETCH API (async/await) ----------
-   ვიღებთ მონაცემებს უფასო ღია API-დან (jsonplaceholder) და
-   პირველ 6 ჩანაწერს ვაქცევთ "აღჭურვილობის" ბარათებად.
-   try/catch ამუშავებს შესაძლო შეცდომას. */
+
 const catalogGrid = document.getElementById('catalogGrid');
 
-// კოდური სახელები, რომ generic მონაცემები სამხედრო თემას მოვარგოთ
+
 const gearNames = ['RECON HELMET', 'PLATE CARRIER', 'NIGHT OPTIC', 'COMBAT GLOVES', 'TAC BELT', 'FIELD PACK'];
 
 async function loadGear() {
@@ -71,8 +53,7 @@ async function loadGear() {
         if (!response.ok) throw new Error('SIGNAL LOST');
         const data = await response.json();
 
-        catalogGrid.innerHTML = ''; // ვასუფთავებთ "LOADING..." ტექსტს
-
+        catalogGrid.innerHTML = ''; 
         data.forEach((item, i) => {
             const card = document.createElement('article');
             card.className = 'gear-card';
@@ -83,7 +64,7 @@ async function loadGear() {
                 <span class="card-tag">→ VIEW SPEC</span>
             `;
             catalogGrid.appendChild(card);
-            // ბარათებს თანმიმდევრულად ვამჟღავნებთ (stagger)
+            
             setTimeout(() => card.classList.add('reveal'), i * 120);
         });
     } catch (err) {
@@ -93,8 +74,7 @@ async function loadGear() {
 loadGear();
 
 
-/* ---------- 5. SCROLL TO TOP ----------
-   ღილაკი ჩნდება 400px-ის შემდეგ; დაჭერისას გვაბრუნებს ზემოთ. */
+
 const scrollTopBtn = document.getElementById('scrollTop');
 
 window.addEventListener('scroll', () => {
@@ -105,8 +85,7 @@ scrollTopBtn.addEventListener('click', () => {
 });
 
 
-/* ---------- 6. SECTION REVEAL (IntersectionObserver) ----------
-   სექციები ჩნდება ეკრანზე მოხვედრისას. */
+
 const revealTargets = document.querySelectorAll('.catalog, .specs, .deploy, .footer');
 revealTargets.forEach(el => el.classList.add('reveal-section'));
 
@@ -122,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
 revealTargets.forEach(el => observer.observe(el));
 
 
-/* ---------- 7. COLOR SWATCH SELECT ----------
+
    ფერის არჩევისას ვცვლით 'active' კლასს. */
 document.querySelectorAll('.swatch').forEach(swatch => {
     swatch.addEventListener('click', () => {
@@ -132,7 +111,7 @@ document.querySelectorAll('.swatch').forEach(swatch => {
 });
 
 
-/* ---------- 8. HERO PAGER ---------- */
+
 document.querySelectorAll('.pager').forEach(dot => {
     dot.addEventListener('click', () => {
         document.querySelector('.pager.active').classList.remove('active');
@@ -141,8 +120,7 @@ document.querySelectorAll('.pager').forEach(dot => {
 });
 
 
-/* ---------- 9. ACTIVE NAV ON SCROLL ----------
-   ნავიგაციის ლინკი მონიშნულია იმ სექციის მიხედვით, რომელზეც ვართ. */
+
 const sections = document.querySelectorAll('section[id], footer[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
