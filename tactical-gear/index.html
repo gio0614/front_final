@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANGUARD — Tactical Gear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- COOKIE NOTIFICATION -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>ეს საიტი იყენებს cookies-ს გამოცდილების გასაუმჯობესებლად.</p>
+        <button id="acceptCookies">ACCEPT</button>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#hero" class="logo">
+                <span class="logo-mark">▲</span>
+                <span class="logo-text">VANGUARD</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">HOME</a></li>
+                <li><a href="#catalog" class="nav-link">GEAR</a></li>
+                <li><a href="#specs" class="nav-link">SPECS</a></li>
+                <li><a href="#deploy" class="nav-link">FIELD</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="search">⌕</button>
+                <button class="icon-btn" aria-label="cart">▣</button>
+                <button class="burger" id="burger" aria-label="menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-text">TACTICAL</div>
+        <div class="container hero-inner">
+            <div class="hero-badges">
+                <span class="pager active"></span>
+                <span class="pager"></span>
+                <span class="pager"></span>
+                <span class="pager"></span>
+            </div>
+
+            <div class="hero-title-block">
+                <h1 class="hero-title">
+                    <span class="title-line-1">Recon</span>
+                    <span class="title-line-2">Set</span>
+                </h1>
+                <p class="hero-subtitle">M I L I T A R Y &nbsp; G R A D E</p>
+            </div>
+
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&w=900&q=80" alt="Tactical helmet gear" class="hero-img">
+                <span class="model-tag">2024 SPEC</span>
+            </div>
+
+            <div class="hero-info">
+                <div class="hero-price">
+                    <span class="price-num">$349</span>
+                    <div class="price-name">
+                        <strong>VANGUARD</strong>
+                        <span>RECON MK-IV</span>
+                    </div>
+                    <span class="exclusive">exclusive</span>
+                </div>
+
+                <div class="color-choose">
+                    <p class="choose-label">CHOOSE FINISH :</p>
+                    <div class="swatches">
+                        <button class="swatch swatch-olive active" aria-label="olive"></button>
+                        <button class="swatch swatch-coyote" aria-label="coyote"></button>
+                        <button class="swatch swatch-black" aria-label="black"></button>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <button class="btn btn-solid">ADD TO KIT</button>
+                    <button class="btn btn-outline">DEPLOY NOW</button>
+                </div>
+
+                <div class="hero-inspiration">
+                    <h3>INSPIRATION</h3>
+                    <p>შთაგონებულია თანამედროვე დაზვერვის ოპერაციებით — Recon MK-IV ეხმარება ოპერატორებს ველზე ხედვისა და მობილურობის ბალანსში.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG (fetched from API) -->
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">// ISSUED EQUIPMENT</span>
+                <h2 class="section-title">STANDARD LOADOUT</h2>
+            </div>
+            <div class="catalog-grid" id="catalogGrid">
+                <p class="loading">LOADING FIELD DATA...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECS -->
+    <section class="specs" id="specs">
+        <div class="container specs-inner">
+            <div class="section-head">
+                <span class="eyebrow">// TECHNICAL DATA</span>
+                <h2 class="section-title">BUILT FOR THE FIELD</h2>
+            </div>
+            <div class="specs-grid">
+                <article class="spec-card">
+                    <span class="spec-num">01</span>
+                    <h3>NIJ IIIA PROTECTION</h3>
+                    <p>ბალისტიკური დაცვის სტანდარტი, სერტიფიცირებული ლაბორატორიულ პირობებში.</p>
+                </article>
+                <article class="spec-card">
+                    <span class="spec-num">02</span>
+                    <h3>MODULAR MOLLE</h3>
+                    <p>სრულად კონფიგურირებადი დამაგრების სისტემა ნებისმიერი მისიისთვის.</p>
+                </article>
+                <article class="spec-card">
+                    <span class="spec-num">03</span>
+                    <h3>IR SUPPRESSION</h3>
+                    <p>ინფრაწითელი ხელმოწერის შემცირება ღამის ოპერაციებისთვის.</p>
+                </article>
+                <article class="spec-card">
+                    <span class="spec-num">04</span>
+                    <h3>ALL-WEATHER RATED</h3>
+                    <p>ფუნქციონირებს −40°C-დან +50°C-მდე ტემპერატურულ დიაპაზონში.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPLOY -->
+    <section class="deploy" id="deploy">
+        <div class="container deploy-inner">
+            <div class="deploy-text">
+                <span class="eyebrow">// FIELD READY</span>
+                <h2 class="section-title">EVERY MISSION.<br>EVERY TERRAIN.</h2>
+                <p>Vanguard-ის აღჭურვილობა ტესტირებულია ექსტრემალურ პირობებში — უდაბნოდან არქტიკამდე. ყოველი ნაკერი და ბალთა შექმნილია ოპერატორის სიცოცხლის დასაცავად.</p>
+                <button class="btn btn-solid">VIEW FULL CATALOG</button>
+            </div>
+            <div class="deploy-img">
+                <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?auto=format&fit=crop&w=800&q=80" alt="Operator in field gear">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="logo-mark">▲</span>
+                <span class="logo-text">VANGUARD</span>
+                <p>Mission-grade tactical equipment. Issued for those who operate at the edge.</p>
+            </div>
+            <div class="footer-col">
+                <h4>GEAR</h4>
+                <a href="#catalog">Helmets</a>
+                <a href="#catalog">Vests</a>
+                <a href="#catalog">Optics</a>
+            </div>
+            <div class="footer-col">
+                <h4>UNIT</h4>
+                <a href="#specs">Standards</a>
+                <a href="#deploy">Field Tests</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>BASE</h4>
+                <p>Tbilisi, GE</p>
+                <p>ops@vanguard.ge</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 VANGUARD TACTICAL. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" aria-label="scroll to top">▲</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
