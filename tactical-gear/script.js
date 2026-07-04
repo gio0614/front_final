@@ -102,7 +102,7 @@ revealTargets.forEach(el => observer.observe(el));
 
 
 
-   ფერის არჩევისას ვცვლით 'active' კლასს. */
+   
 document.querySelectorAll('.swatch').forEach(swatch => {
     swatch.addEventListener('click', () => {
         document.querySelector('.swatch.active').classList.remove('active');
